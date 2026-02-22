@@ -4,6 +4,7 @@ import ma.enset.dao.IDao;
 import ma.enset.dao.daoImpl.DaoImpl1;
 import ma.enset.metier.IMetier;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("metier")
@@ -17,7 +18,7 @@ public class MetierImpl1 implements IMetier {
     // @Autowired
     private IDao dao;
     @Autowired
-    public MetierImpl1(IDao dao) {
+    public MetierImpl1(@Qualifier("dao1") IDao dao) {
         this.dao = dao;
     }
 
